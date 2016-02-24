@@ -16,14 +16,18 @@ import java.util.Map;
 import org.eclipse.rap.demo.controls.ControlsDemo;
 import org.eclipse.rap.rwt.RWT;
 import org.eclipse.rap.rwt.application.Application;
-import org.eclipse.rap.rwt.application.ApplicationConfiguration;
 import org.eclipse.rap.rwt.application.Application.OperationMode;
+import org.eclipse.rap.rwt.application.ApplicationConfiguration;
 import org.eclipse.rap.rwt.client.WebClient;
+
+import com.eclipsesource.tabris.TabrisClientInstaller;
 
 
 public class ControlsApplication implements ApplicationConfiguration {
 
+  @Override
   public void configure( Application application ) {
+    TabrisClientInstaller.install( application );
     Map<String, String> properties = new HashMap<String, String>();
     properties.put( WebClient.PAGE_TITLE, "RWT Controls Demo" );
     application.setOperationMode( OperationMode.SWT_COMPATIBILITY );

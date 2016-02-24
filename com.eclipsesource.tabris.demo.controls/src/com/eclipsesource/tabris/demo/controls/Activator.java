@@ -10,6 +10,7 @@
  ******************************************************************************/
 package com.eclipsesource.tabris.demo.controls;
 
+import org.eclipse.rap.demo.controls.internal.ControlsApplication;
 import org.eclipse.rap.rwt.application.ApplicationConfiguration;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -22,8 +23,8 @@ public class Activator implements BundleActivator {
 
   @Override
   public void start( BundleContext context ) throws Exception {
-    AppConfiguration appConfiguration = new AppConfiguration();
-    registration = context.registerService( ApplicationConfiguration.class, appConfiguration, null );
+    ControlsApplication controlsApplication = new ControlsApplication();
+    registration = context.registerService( ApplicationConfiguration.class, controlsApplication, null );
   }
 
   @Override
